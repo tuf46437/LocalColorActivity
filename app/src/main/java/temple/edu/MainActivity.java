@@ -1,17 +1,10 @@
 package temple.edu;
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
-
 import android.widget.Spinner;
-
-
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -23,27 +16,33 @@ public class MainActivity extends AppCompatActivity {
         //ListView colorSpinner = findViewById(R.id.MyList);
 
 
-        final String colorList[] = {"Red", "Yellow", "Green", "Cyan", "Blue", "Gray", "Magenta", "Black"};//I had pink orange and another color here but When I ran it crashed
+        final String colorList[] = {"None", "Red", "Yellow", "Green", "Cyan", "Blue", "Magenta", "Black", "Darkgray", "Gray", "Lightgray", "White"};//I had pink orange and another color here but When I ran it crashed
 
         ColorAdapter spinnerColorsDropdown = new ColorAdapter(MainActivity.this, colorList);
 
         colorSpinner.setAdapter(spinnerColorsDropdown);
 
         colorSpinner.setOnItemSelectedListener(
+
                 new AdapterView.OnItemSelectedListener() {
+
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                        getWindow().getDecorView().setBackgroundColor(Color.parseColor(colorList[position]));//again if I use color.parse here is does not work.
+                        if(colorList[position].equals("None")){
+                        }
+                        else{
+                            Intent launchSecondActivity = new Intent(MainActivity.this, CanvasActivity.class);
+                            launchSecondActivity.putExtra("usernameInput",  colorList[position]);
+                            startActivity(launchSecondActivity);
+                            //getWindow().getDecorView().setBackgroundColor(Color.parseColor(colorList[position]));//again if I use color.parse here is does not wor
+                        }
                     }
 
                     @Override
                     public void onNothingSelected(AdapterView<?> arg0) {
 
                     }
-                    //add some code here
                 }
         );
-
     }
 }
