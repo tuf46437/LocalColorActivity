@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ColorActivity</string>
+    <string name="labelIntro">Welcome to the Color Activity!</string>
+    <string name="labelColorPage">Tap to select a different color</string>
+
+    <string-array name="colorsArray">
+        <item>None</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Cyan</item>
+        <item>Blue</item>
+        <item>Magenta</item>
+        <item>Black</item>
+        <item>Darkgray</item>
+        <item>Gray</item>
+        <item>Lightgray</item>
+        <item>White</item>
+    </string-array>
 </resources>

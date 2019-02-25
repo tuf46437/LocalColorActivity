@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Actividad de color</string>
+    <string name="labelIntro">¡Bienvenido a la actividad del color!</string>
+    <string name="labelColorPage">Toque para seleccionar un color diferente</string>
+    <string-array name="colorsArray">
+        <item>Nada</item>
+        <item>Roja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Cian</item>
+        <item>Azul</item>
+        <item>Magenta</item>
+        <item>Negro</item>
+        <item>Grisoscuro</item>
+        <item>Gris</item>
+        <item>Grisclaro</item>
+        <item>Blanco</item>
+    </string-array>
+
+
+
+</resources>

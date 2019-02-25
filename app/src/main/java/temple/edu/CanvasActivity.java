@@ -19,7 +19,7 @@ public class CanvasActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 finish();
+                 CanvasActivity.this.finish();
              }
          });
 

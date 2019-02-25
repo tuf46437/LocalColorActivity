@@ -10,11 +10,13 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
     Context context;
     String colors[];
+    String engColors[];
 
 
-    public ColorAdapter (Context context, String colors[]){
+    public ColorAdapter (Context context, String colors[], String engColors[]){
         this.context = context;
         this.colors = colors;
+        this.engColors = engColors;
     }
 
     @Override
@@ -37,21 +39,22 @@ public class ColorAdapter extends BaseAdapter {
         TextView textView = new TextView(context);
 
         String color = colors[position];
+        String engColor = engColors[position];
 
         textView.setText(color);
-        if(colors[position].equals("None")){
+        if(position == 0){
             textView.setTextColor(Color.parseColor("Black"));
             textView.setBackgroundColor(Color.parseColor("White"));
             textView.setTextSize(22);
         }
         else{
-            if(colors[position].equals("White") || colors[position].equals("Cyan") || colors[position].equals("Lightgray") || colors[position].equals("Yellow")) {
+            if(engColors[position].equals("White") || engColors[position].equals("Cyan") || engColors[position].equals("Lightgray") || engColors[position].equals("Yellow")) {
                 textView.setTextColor(Color.parseColor("Black"));
             }
             else {
                 textView.setTextColor(Color.parseColor("White"));
             }
-            textView.setBackgroundColor(Color.parseColor(color));
+            textView.setBackgroundColor(Color.parseColor(engColor));
             textView.setTextSize(22);
         }
 
